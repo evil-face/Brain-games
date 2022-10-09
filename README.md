@@ -9,3 +9,6 @@ make run-dist
 ```
 ### Demo of "Even" game
 [![asciicast](https://asciinema.org/a/51jR49iM4XzbsSW4E1u8wvuJY.svg)](https://asciinema.org/a/51jR49iM4XzbsSW4E1u8wvuJY)
+
+### Demo of "Calc" game
+[![asciicast](https://asciinema.org/a/xEl2g0lfaqgrIgEtUgPHJmHvj.svg)](https://asciinema.org/a/xEl2g0lfaqgrIgEtUgPHJmHvj)
