@@ -12,3 +12,6 @@ make run-dist
 
 ### Demo of "Calc" game
 [![asciicast](https://asciinema.org/a/xEl2g0lfaqgrIgEtUgPHJmHvj.svg)](https://asciinema.org/a/xEl2g0lfaqgrIgEtUgPHJmHvj)
+
+### Demo of "GCD" game
+TODO: add asciinema
