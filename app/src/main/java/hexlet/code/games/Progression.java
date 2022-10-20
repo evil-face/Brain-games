@@ -18,6 +18,8 @@ public class Progression {
         // generate questions and answers array
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int randPlace = rand.nextInt(LENGTH);
+
+            // get new array
             String[] currentStr = generateProg();
 
             // write an answer and then change it to secret mask in a random place
@@ -36,9 +38,15 @@ public class Progression {
         Random rand = new Random();
         String[] arr = new String[LENGTH];
         int init = rand.nextInt(100);
-        int diff = rand.nextInt(10);
         arr[0] = String.valueOf(init);
+        int diff = 0;
 
+        // change diff value in case it's generated as zero to make game more fun
+        while (diff == 0) {
+            diff = rand.nextInt(10);
+        }
+
+        // fill array with full progression
         for (int i = 1; i < LENGTH; i++) {
             arr[i] = String.valueOf(Integer.parseInt(arr[i - 1]) + diff);
         }
