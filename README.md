@@ -15,3 +15,6 @@ make run-dist
 
 ### Demo of "GCD" game
 [![asciicast](https://asciinema.org/a/ZP88VC6ovxHXtn98kqjiUMhdc.svg)](https://asciinema.org/a/ZP88VC6ovxHXtn98kqjiUMhdc)
+
+### Demo of "Progression" game
+[![asciicast](https://asciinema.org/a/Zv2978gGjooK7avvwQgEmZ1Ws.svg)](https://asciinema.org/a/Zv2978gGjooK7avvwQgEmZ1Ws)
