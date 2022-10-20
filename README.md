@@ -14,4 +14,4 @@ make run-dist
 [![asciicast](https://asciinema.org/a/xEl2g0lfaqgrIgEtUgPHJmHvj.svg)](https://asciinema.org/a/xEl2g0lfaqgrIgEtUgPHJmHvj)
 
 ### Demo of "GCD" game
-TODO: add asciinema
+[![asciicast](https://asciinema.org/a/ZP88VC6ovxHXtn98kqjiUMhdc.svg)](https://asciinema.org/a/ZP88VC6ovxHXtn98kqjiUMhdc)
