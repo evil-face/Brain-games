@@ -4,12 +4,15 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Calc {
+
+    // main method to run the game
     public static void startCalcGame() {
         Random rand = new Random();
         String[] questions = new String[Engine.ROUNDS];
         String[] answers = new String[Engine.ROUNDS];
         String task = "What is the result of the expression?";
 
+        // generate questions and answers array
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int firstRandNumber = rand.nextInt(100);
             int secondRandNumber = rand.nextInt(100);
@@ -31,6 +34,7 @@ public class Calc {
             }
         }
 
+        // call the engine with game parameters
         Engine.runGame(task, questions, answers);
     }
 }
