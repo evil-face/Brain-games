@@ -18,3 +18,6 @@ make run-dist
 
 ### Demo of "Progression" game
 [![asciicast](https://asciinema.org/a/Zv2978gGjooK7avvwQgEmZ1Ws.svg)](https://asciinema.org/a/Zv2978gGjooK7avvwQgEmZ1Ws)
+
+### Demo of "Progression" game
+[![asciicast](https://asciinema.org/a/F51ZOaDX05Lq2OVM7HlWciuDc.svg)](https://asciinema.org/a/F51ZOaDX05Lq2OVM7HlWciuDc)
