@@ -2,7 +2,11 @@ package hexlet.code;
 
 import java.util.Scanner;
 public class Engine {
+
+    // a constant for a number of rounds to play before we announce win
     public static final int ROUNDS = 3;
+
+    // a method to greet user with typed in name
     public static String getName() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nWelcome to the Brain Games!");
@@ -12,10 +16,15 @@ public class Engine {
         return name;
     }
 
+
+    // a method to print game text with any received parameters
     public static void runGame(String task, String[] questions, String[] answers) {
+
+        // get user name from a console
         String name = getName();
         System.out.println(task);
 
+        // a method to print game info and compare user's answers
         for (int i = 0; i < ROUNDS; i++) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Question: " + questions[i]);
