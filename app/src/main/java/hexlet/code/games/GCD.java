@@ -14,8 +14,8 @@ public class GCD {
 
         // generate questions and answers array
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int firstRandNumber = rand.nextInt(100);
-            int secondRandNumber = rand.nextInt(100);
+            int firstRandNumber = rand.nextInt(Engine.RANGE);
+            int secondRandNumber = rand.nextInt(Engine.RANGE);
             questions[i] = firstRandNumber + " " + secondRandNumber;
             answers[i] = String.valueOf(getGcd(firstRandNumber, secondRandNumber));
         }
