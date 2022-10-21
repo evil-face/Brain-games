@@ -5,6 +5,9 @@ import java.util.Random;
 
 public class Calc {
 
+    // number of different math operations used in game
+    public static final int TYPE = 3;
+
     // main method to run the game
     public static void startCalcGame() {
         Random rand = new Random();
@@ -14,9 +17,9 @@ public class Calc {
 
         // generate questions and answers array
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int firstRandNumber = rand.nextInt(100);
-            int secondRandNumber = rand.nextInt(100);
-            int type = rand.nextInt(3);
+            int firstRandNumber = rand.nextInt(Engine.RANGE);
+            int secondRandNumber = rand.nextInt(Engine.RANGE);
+            int type = rand.nextInt(TYPE);
 
             switch (type) {
                 case 0:
