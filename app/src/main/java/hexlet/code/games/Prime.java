@@ -14,7 +14,7 @@ public class Prime {
 
         // generate questions and answers array
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int randNumber = rand.nextInt(100);
+            int randNumber = rand.nextInt(Engine.RANGE);
             questions[i] = String.valueOf(randNumber);
             answers[i] = isPrime(randNumber) ? "yes" : "no";
         }
