@@ -8,6 +8,9 @@ public class Progression {
     // length of generated progression
     private static final int LENGTH = 10;
 
+    // biggest generated random number used as progression difference
+    private static final int DIFF = 10;
+
     // main method to run the game
     public static void startProgGame() {
         Random rand = new Random();
@@ -37,13 +40,13 @@ public class Progression {
     public static String[] generateProg() {
         Random rand = new Random();
         String[] arr = new String[LENGTH];
-        int init = rand.nextInt(100);
+        int init = rand.nextInt(Engine.RANGE);
         arr[0] = String.valueOf(init);
         int diff = 0;
 
         // change diff value in case it's generated as zero to make game more fun
         while (diff == 0) {
-            diff = rand.nextInt(10);
+            diff = rand.nextInt(DIFF);
         }
 
         // fill array with full progression
