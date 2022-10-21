@@ -13,7 +13,7 @@ public class Even {
 
         // generate questions and answers array
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int randNumber = rand.nextInt(100);
+            int randNumber = rand.nextInt(Engine.RANGE);
             questions[i] = String.valueOf(randNumber);
             answers[i] = (randNumber % 2 == 0) ? "yes" : "no";
         }
