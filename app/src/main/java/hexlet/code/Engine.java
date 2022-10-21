@@ -3,8 +3,11 @@ package hexlet.code;
 import java.util.Scanner;
 public class Engine {
 
-    // a constant for a number of rounds to play before we announce win
+    // number of rounds to play before we announce win
     public static final int ROUNDS = 3;
+
+    // biggest generated random number used in games
+    public static final int RANGE = 100;
 
     // a method to greet user with typed in name
     public static String getName() {
