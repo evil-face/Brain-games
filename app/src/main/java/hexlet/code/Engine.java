@@ -10,7 +10,7 @@ public class Engine {
     public static final int RANGE = 100;
 
     // a method to greet user with typed in name
-    public static String getName() {
+    private static String getName() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nWelcome to the Brain Games!");
         System.out.print("May I have your name? ");
