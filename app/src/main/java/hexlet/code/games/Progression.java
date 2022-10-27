@@ -21,9 +21,10 @@ public class Progression {
         // generate questions and answers array
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int randPlace = rand.nextInt(LENGTH);
-
+            int init = rand.nextInt(Engine.RANGE);
+            int step = generateStep();
             // get new array
-            String[] currentStr = generateProg();
+            String[] currentStr = generateProg(init, step, LENGTH);
 
             // write an answer and then change it to secret mask in a random place
             answers[i] = currentStr[randPlace];
@@ -36,22 +37,26 @@ public class Progression {
         Engine.runGame(task, questions, answers);
     }
 
-    // a method to generate full progression in string array
-    public static String[] generateProg() {
+    // a method to generate non-zero step for progression
+    private static int generateStep() {
         Random rand = new Random();
-        String[] arr = new String[LENGTH];
-        int init = rand.nextInt(Engine.RANGE);
-        arr[0] = String.valueOf(init);
-        int diff = 0;
+        int step = 0;
 
         // change diff value in case it's generated as zero to make game more fun
-        while (diff == 0) {
-            diff = rand.nextInt(DIFF);
+        while (step == 0) {
+            step = rand.nextInt(DIFF);
         }
+        return step;
+    }
+
+    // a method to generate full progression in string array
+    private static String[] generateProg(int initialValue, int step, int progressionLength) {
+        String[] arr = new String[progressionLength];
+        arr[0] = String.valueOf(initialValue);
 
         // fill array with full progression
-        for (int i = 1; i < LENGTH; i++) {
-            arr[i] = String.valueOf(Integer.parseInt(arr[i - 1]) + diff);
+        for (int i = 1; i < progressionLength; i++) {
+            arr[i] = String.valueOf(Integer.parseInt(arr[i - 1]) + step);
         }
 
         return arr;
