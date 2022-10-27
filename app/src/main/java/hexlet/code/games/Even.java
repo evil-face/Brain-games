@@ -15,10 +15,15 @@ public class Even {
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int randNumber = rand.nextInt(Engine.RANGE);
             questions[i] = String.valueOf(randNumber);
-            answers[i] = (randNumber % 2 == 0) ? "yes" : "no";
+            answers[i] = isEven(randNumber) ? "yes" : "no";
         }
 
         // call the engine with game parameters
         Engine.runGame(task, questions, answers);
+    }
+
+    // checking if number is even or not
+    private static boolean isEven(int num) {
+        return num % 2 == 0;
     }
 }
