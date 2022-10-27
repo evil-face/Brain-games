@@ -24,7 +24,7 @@ public class Prime {
     }
 
     // a method to check if a number is prime
-    public static boolean isPrime(int a) {
+    private static boolean isPrime(int a) {
         int i = 2;
         boolean hasMoreThanTwoDividers = false;
 
