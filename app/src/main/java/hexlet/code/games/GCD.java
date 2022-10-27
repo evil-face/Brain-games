@@ -25,7 +25,7 @@ public class GCD {
     }
 
     // a method to find the greatest common divisor
-    public static int getGcd(int a, int b) {
+    private static int getGcd(int a, int b) {
         return (a % b == 0) ? Math.abs(b) : getGcd(b, a % b);
     }
 }
