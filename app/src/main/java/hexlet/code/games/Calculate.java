@@ -30,25 +30,39 @@ public class Calculate {
     private static String[] getRandomQuestionAndAnswer() {
         int firstRandNumber = RandomUtils.getRandomNumber(Engine.RANGE);
         int secondRandNumber = RandomUtils.getRandomNumber(Engine.RANGE);
-        int type = RandomUtils.getRandomNumber(TYPE);
+        int typeOfMathOperator = RandomUtils.getRandomNumber(TYPE);
+        int answerValue = 0;
+        String mathOperator = getStringMathOperator(typeOfMathOperator);
         String[] currentPair = new String[2];
 
-        switch (type) {
-            case 0:
-                currentPair[0] = firstRandNumber + " + " + secondRandNumber;
-                currentPair[1] = String.valueOf(firstRandNumber + secondRandNumber);
+        currentPair[0] = firstRandNumber + mathOperator + secondRandNumber;
+        switch (mathOperator.trim()) {
+            case "+":
+                answerValue = firstRandNumber + secondRandNumber;
                 break;
-            case 1:
-                currentPair[0] = firstRandNumber + " - " + secondRandNumber;
-                currentPair[1] = String.valueOf(firstRandNumber - secondRandNumber);
+            case "-":
+                answerValue = firstRandNumber - secondRandNumber;
                 break;
-            case 2:
-                currentPair[0] = firstRandNumber + " * " + secondRandNumber;
-                currentPair[1] = String.valueOf(firstRandNumber * secondRandNumber);
+            case "*":
+                answerValue = firstRandNumber * secondRandNumber;
                 break;
             default:
                 //todo throw exception
         }
+        currentPair[1] = String.valueOf(answerValue);
+
         return currentPair;
+    }
+
+    private static String getStringMathOperator(int type) {
+        String operator = "";
+        switch (type) {
+            case 0 -> operator = " + ";
+            case 1 -> operator = " - ";
+            case 2 -> operator = " * ";
+            default -> {
+            }
+        }
+        return operator;
     }
 }
