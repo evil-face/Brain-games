@@ -55,14 +55,11 @@ public class Calculate {
     }
 
     private static String getStringMathOperator(int type) {
-        String operator = "";
-        switch (type) {
-            case 0 -> operator = " + ";
-            case 1 -> operator = " - ";
-            case 2 -> operator = " * ";
-            default -> {
-            }
-        }
-        return operator;
+        return switch (type) {
+            case 0 -> " + ";
+            case 1 -> " - ";
+            case 2 -> " * ";
+            default -> null;
+        };
     }
 }
