@@ -1,7 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.games.Even;
-import hexlet.code.games.Calc;
+import hexlet.code.games.Calculate;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
@@ -24,7 +24,7 @@ public class App {
         switch (choice) {
             case "1" -> Cli.showGreeting();
             case "2" -> Even.startEvenGame();
-            case "3" -> Calc.startCalcGame();
+            case "3" -> Calculate.startCalcGame();
             case "4" -> GCD.startGcdGame();
             case "5" -> Progression.startProgGame();
             case "6" -> Prime.startPrimeGame();
