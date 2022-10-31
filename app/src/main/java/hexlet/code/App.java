@@ -5,11 +5,13 @@ import hexlet.code.games.Calculate;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
+
+import java.io.IOException;
 import java.util.Scanner;
+import org.apache.commons.lang3.StringUtils;
 
 public class App {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -19,16 +21,25 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
-        String choice = scanner.next();
-
-        switch (choice) {
-            case "1" -> Cli.showGreeting();
-            case "2" -> Even.startEvenGame();
-            case "3" -> Calculate.startCalcGame();
-            case "4" -> GCD.startGcdGame();
-            case "5" -> Progression.startProgGame();
-            case "6" -> Prime.startPrimeGame();
-            default -> System.out.println("See you!");
+        Scanner scanner = new Scanner(System.in);
+        try {
+            String choice = scanner.next();
+            if (!StringUtils.isNumeric(choice)) {
+                throw new IOException();
+            }
+            switch (choice) {
+                case "1" -> Cli.showGreeting();
+                case "2" -> Even.startEvenGame();
+                case "3" -> Calculate.startCalcGame();
+                case "4" -> GCD.startGcdGame();
+                case "5" -> Progression.startProgGame();
+                case "6" -> Prime.startPrimeGame();
+                case "0" -> System.out.println("Goodbye!");
+                default -> throw new IOException();
+            }
+        } catch (IOException e) {
+            System.out.println("Please enter a valid number next time!");
         }
     }
 }
+
