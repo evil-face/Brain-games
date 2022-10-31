@@ -16,10 +16,15 @@ public class Calculate {
         String[] questions = new String[Engine.ROUNDS];
         String[] answers = new String[Engine.ROUNDS];
         // generate questions and answers array
-        for (int i = 0; i < Engine.ROUNDS; i++) {
-            String[] currentPair = getRandomQuestionAndAnswer();
-            questions[i] = currentPair[0];
-            answers[i] = currentPair[1];
+        try {
+            for (int i = 0; i < Engine.ROUNDS; i++) {
+                String[] currentPair = getRandomQuestionAndAnswer();
+                questions[i] = currentPair[0];
+                answers[i] = currentPair[1];
+            }
+        } catch (RuntimeException e) {
+            System.out.println("Unknown math operation");
+            return;
         }
 
         // call the engine with game parameters
@@ -27,15 +32,16 @@ public class Calculate {
     }
 
     // randomly pick math operation and generate question and answer
-    private static String[] getRandomQuestionAndAnswer() {
+    private static String[] getRandomQuestionAndAnswer() throws RuntimeException {
         int firstRandNumber = RandomUtils.getRandomNumber(Engine.RANGE);
         int secondRandNumber = RandomUtils.getRandomNumber(Engine.RANGE);
         int typeOfMathOperator = RandomUtils.getRandomNumber(TYPE);
-        int answerValue = 0;
-        String mathOperator = getStringMathOperator(typeOfMathOperator);
+        int answerValue;
         String[] currentPair = new String[2];
 
+        String mathOperator = getStringMathOperator(typeOfMathOperator);
         currentPair[0] = firstRandNumber + mathOperator + secondRandNumber;
+
         switch (mathOperator.trim()) {
             case "+":
                 answerValue = firstRandNumber + secondRandNumber;
@@ -47,19 +53,20 @@ public class Calculate {
                 answerValue = firstRandNumber * secondRandNumber;
                 break;
             default:
-                //todo throw exception
+                throw new RuntimeException();
         }
+
         currentPair[1] = String.valueOf(answerValue);
 
         return currentPair;
     }
 
-    private static String getStringMathOperator(int type) {
+    private static String getStringMathOperator(int type) throws RuntimeException {
         return switch (type) {
             case 0 -> " + ";
             case 1 -> " - ";
             case 2 -> " * ";
-            default -> null;
+            default -> throw new RuntimeException();
         };
     }
 }
