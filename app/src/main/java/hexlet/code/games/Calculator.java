@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
-public class Calculate {
+public class Calculator {
 
     // number of different math operations used in game
     private static final int TYPE = 3;
