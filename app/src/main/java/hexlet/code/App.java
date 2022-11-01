@@ -1,11 +1,10 @@
 package hexlet.code;
 
+import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
-import hexlet.code.games.Calculate;
 import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
-
+import hexlet.code.games.Progression;
 import java.io.IOException;
 import java.util.Scanner;
 import org.apache.commons.lang3.StringUtils;
@@ -30,7 +29,7 @@ public class App {
             switch (choice) {
                 case "1" -> Cli.showGreeting();
                 case "2" -> Even.startEvenGame();
-                case "3" -> Calculate.startCalcGame();
+                case "3" -> Calculator.startCalcGame();
                 case "4" -> GCD.startGcdGame();
                 case "5" -> Progression.startProgGame();
                 case "6" -> Prime.startPrimeGame();
