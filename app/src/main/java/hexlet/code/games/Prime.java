@@ -7,20 +7,21 @@ public class Prime {
 
     // game task
     private static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
     // main method to run the game
     public static void startPrimeGame() {
-        String[] questions = new String[Engine.ROUNDS];
-        String[] answers = new String[Engine.ROUNDS];
+        String[] primeQuestions = new String[Engine.ROUNDS];
+        String[] primeAnswers = new String[Engine.ROUNDS];
 
         // generate questions and answers array
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int randNumber = RandomUtils.getRandomNumber(Engine.RANGE);
-            questions[i] = String.valueOf(randNumber);
-            answers[i] = isPrime(randNumber) ? "yes" : "no";
+            primeQuestions[i] = String.valueOf(randNumber);
+            primeAnswers[i] = isPrime(randNumber) ? "yes" : "no";
         }
 
         // call the engine with game parameters
-        Engine.runGame(TASK, questions, answers);
+        Engine.runGame(TASK, primeQuestions, primeAnswers);
     }
 
     // a method to check if a number is prime
