@@ -32,13 +32,12 @@ public class Prime {
         // check if a == 0 or a == 1, otherwise run an algorithm
         if (a <= 1) {
             return false;
-        } else {
-            while ((i * i <= a) && !hasMoreThanTwoDividers) {
-                if (a % i == 0) {
-                    hasMoreThanTwoDividers = true;
-                }
-                i++;
+        }
+        while ((i * i <= a) && !hasMoreThanTwoDividers) {
+            if (a % i == 0) {
+                hasMoreThanTwoDividers = true;
             }
+            i++;
         }
 
         return !hasMoreThanTwoDividers;
