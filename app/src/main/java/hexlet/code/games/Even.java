@@ -10,18 +10,18 @@ public class Even {
 
     // main method to run the game
     public static void startEvenGame() {
-        String[] questions = new String[Engine.ROUNDS];
-        String[] answers = new String[Engine.ROUNDS];
+        String[] evenAnswers = new String[Engine.ROUNDS];
+        String[] evenQuestions = new String[Engine.ROUNDS];
 
         // generate questions and answers array
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int randNumber = RandomUtils.getRandomNumber(Engine.RANGE);
-            questions[i] = String.valueOf(randNumber);
-            answers[i] = isEven(randNumber) ? "yes" : "no";
+            evenQuestions[i] = String.valueOf(randNumber);
+            evenAnswers[i] = isEven(randNumber) ? "yes" : "no";
         }
 
         // call the engine with game parameters
-        Engine.runGame(TASK, questions, answers);
+        Engine.runGame(TASK, evenQuestions, evenAnswers);
     }
 
     // checking if number is even or not
